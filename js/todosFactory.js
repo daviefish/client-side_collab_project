@@ -1,22 +1,22 @@
-angular.module('PokemonApp')
-  .factory('PokemonFactory', PokemonFactory);
+angular.module('TodosApp')
+  .factory('TodoFactory', TodoFactory);
 
-PokemonFactory.$inject = ['$http'];
+TodoFactory.$inject = ['$http'];
 
-function PokemonFactory($http) {
-    var pokedexURL = 'http://pokeapi.co/api/v1/pokedex/1';
-    var pokemonURL = 'http://pokeapi.co/';
-    var pokeFactory = {};
+function TodoFactory($http) {
+    var todosURL = 'http://localhost:3000/api/todos';
+    var todoURL = 'http://localhost:3000/api/todos/:id';
+    var todoFactory = {};
 
-    pokeFactory.getAllPokemon = function() {
-      return $http.get(pokedexURL);
+    todoFactory.getAllTodos = function() {
+      return $http.get(todosURL);
     };
 
-    pokeFactory.getOnePokemon = function(id) {
-      return $http.get(pokemonURL + id);
+    todoFactory.getOneTodo = function(id) {
+      return $http.get(todoURL + id);
     };
 
-    return pokeFactory;
+    return todoFactory;
 }
 
 
