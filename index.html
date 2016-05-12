@@ -9,18 +9,18 @@
   <script src="./js/todosFactory.js"></script>
 </head>
 
-<body>
-
-</body>
 <body ng-controller="TodosController as todosCtrl">
-
+working
 
   <div class="container">
     <h1 class="jumbotron text-center">List of Todos </h1>
     <div class="col-xs-8">
-        <button class="btn btn-info btn-xs" ng-repeat="todo in todosCtrl.allTodos" ng-click="todosCtrl.showTodo(todo.resource_uri)">
+        <div class="btn btn-info btn-xs" ng-repeat="todo in todosCtrl.allTodos" >
+          <div ng-click="todosCtrl.deleteTodo(todo)">
             {{todo.title}}
-        </button>
+            </div>
+        </div>
+
     </div>
 
    <!--  <div class="col-xs-4">
