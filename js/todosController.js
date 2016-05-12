@@ -17,10 +17,10 @@ function TodosController(TodoFactory) {
 
     self.todos = {};
 
-    self.showTodos = showTodos;
+    self.showTodo = showTodo;
 
-    function showTodos(id) {
-      console.log("Show Todos: " + id);
+    function showTodo(id) {
+      console.log("Show Todo: " + id);
       self.api.getOneTodo(id)
           .success(function(todo) {
             self.todo = todo;
