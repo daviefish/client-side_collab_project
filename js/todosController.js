@@ -5,9 +5,10 @@ TodosController.$inject = ['TodoFactory'];
 
 function TodosController(TodoFactory) {
   var self = this;
+  self.allTodos = [];
   self.api = TodoFactory;
 
-  self.allTodos = [];
+
 
   self.api.getAllTodos()
     .success(function(data) {
